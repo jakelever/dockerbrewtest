@@ -3,7 +3,7 @@
 # Example: sh run.sh mirtex in.json out.json
 # Note that input and output file must be absolute path.
 
-set -euxo pipefail
+set -eux
 
 imageName=$1
 
