@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 if type "yum" > /dev/null; then
 	yum -y update
 	yum -y install gcc curl git ruby vim tar
