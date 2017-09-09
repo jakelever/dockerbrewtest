@@ -1,0 +1,12 @@
+sudo: required
+
+language: ruby
+
+services:
+  - docker
+
+before_install:
+  - docker build -t myimage .
+
+script:
+  - sh run_docker_image.sh
