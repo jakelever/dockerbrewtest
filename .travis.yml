@@ -6,7 +6,8 @@ services:
   - docker
 
 before_install:
-  - docker build -t myimage .
+  - sh build_docker_image.sh myimage
 
 script:
-  - sh run_docker_image.sh
+  - sh run_docker_image.sh myimage
+

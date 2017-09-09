@@ -5,6 +5,8 @@
 
 set -euxo pipefail
 
+imageName=$1
+
 CONTAINER_NAME=testing
 
 touch install.log test.log final.log
@@ -15,7 +17,7 @@ touch install.log test.log final.log
 #       -v $PWD/final.log:/home/user/final.log \
 #       myimage \
 
-docker run --name ${CONTAINER_NAME} myimage
+docker run --name ${CONTAINER_NAME} $imageName
 docker cp ${CONTAINER_NAME}:/home/user/install.log $PWD/install.log
 docker cp ${CONTAINER_NAME}:/home/user/test.log $PWD/test.log
 docker cp ${CONTAINER_NAME}:/home/user/final.log $PWD/final.log
