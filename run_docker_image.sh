@@ -24,3 +24,10 @@ docker cp ${CONTAINER_NAME}:/home/user/final.log $PWD/final.log
 
 # Rmove container.
 docker rm ${CONTAINER_NAME}
+
+gccTestExit=`cat $PWD/final.log`
+if [ $gccTestExit -ne 0 ]; then
+	echo "The build failed for some reason. Logs are below:"
+	cat $PWD/install.log
+	cat $PWD/test.log
+fi
