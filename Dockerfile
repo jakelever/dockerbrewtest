@@ -1,5 +1,5 @@
-#FROM openjdk:8-jdk
-FROM cern/slc6-base
+FROM openjdk:8-jdk
+#FROM cern/slc6-base
 
 COPY install_bare_essentials.sh /install_bare_essentials.sh
 RUN sh /install_bare_essentials.sh
