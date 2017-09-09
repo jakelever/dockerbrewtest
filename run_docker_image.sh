@@ -26,8 +26,11 @@ docker cp ${CONTAINER_NAME}:/home/user/final.log $PWD/final.log
 docker rm ${CONTAINER_NAME}
 
 gccTestExit=`cat $PWD/final.log`
-if [ $gccTestExit -ne 0 ]; then
+if [ $gccTestExit -eq 0 ]; then
+	echo "Test passed"
+else
 	echo "The build failed for some reason. Logs are below:"
 	cat $PWD/install.log
 	cat $PWD/test.log
+	exit 1
 fi
