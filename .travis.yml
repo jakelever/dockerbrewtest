@@ -11,8 +11,8 @@ before_install:
   - sudo apt-get update
   - sudo apt-get -y install docker-ce
   - docker --version
-  - sh build_docker_image.sh myimage
+  - sudo sh build_docker_image.sh myimage
 
 script:
-  - sh run_docker_image.sh myimage
+  - sudo sh run_docker_image.sh myimage
 
