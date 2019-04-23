@@ -10,5 +10,6 @@ install:
   - brew tap brewsci/bio
   - brew tap brewsci/science
 script:
-  - brew install $(brew search brewsci | sort -R | head -n 10)
+  - brew search brewsci | sort -R | head -n 10 | sort | tee selectedPackages
+  - brew install $(cat selectedPackages)
 
