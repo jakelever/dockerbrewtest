@@ -10,5 +10,5 @@ install:
   - brew tap brewsci/bio
   - brew tap brewsci/science
 script:
-  - brew install $(brew search brewsci | sort -R | head -n 1)
+  - brew install $(brew search brewsci | sort -R | head -n 10)
 
