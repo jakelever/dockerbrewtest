@@ -8,7 +8,6 @@ install:
   - test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
   - echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
   - brew tap brewsci/bio
-  - brew tap brewsci/science
 script:
   - brew search brewsci | sort -R | head -n 10 | sort | tee selectedPackages
   - brew install $(cat selectedPackages)
