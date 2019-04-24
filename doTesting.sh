@@ -1,7 +1,7 @@
 #!/bin/bash
 set -x
 
-if [ "$MODE" == "bio" ]; then
+if [[ "$MODE" == "bio" ]]; then
 
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
 	test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
@@ -11,7 +11,7 @@ if [ "$MODE" == "bio" ]; then
 	brew search brewsci | sort -R | head -n 10 | sort | tee selectedPackages
 	brew install $(cat selectedPackages)
 
-elif [ "$MODE" == "docker" ]; then
+elif [[ "$MODE" == "docker" ]]; then
 
 	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
