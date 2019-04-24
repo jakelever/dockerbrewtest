@@ -1,17 +1,12 @@
-sudo: required
-
-language: python
 
 matrix:
   include:
     - os: linux
       sudo: required
-      python: 2.7
-      env: TOXENV=py27
+      env: MODE=bio
     - os: linux
       sudo: required
-      python: 3.6
-      env: TOXENV=py36
+      env: MODE=docker
 
 install:
   - sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
