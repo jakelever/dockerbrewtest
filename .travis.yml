@@ -8,13 +8,7 @@ matrix:
       sudo: required
       env: MODE=docker
 
-install:
-  - sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
-  - test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-  - test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
-  - echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
-  - brew tap brewsci/bio
 script:
-  - brew search brewsci | sort -R | head -n 10 | sort | tee selectedPackages
-  - brew install $(cat selectedPackages)
+  - sh doTesting.sh
+
 
