@@ -2,6 +2,17 @@ sudo: required
 
 language: python
 
+matrix:
+  include:
+    - os: linux
+      sudo: required
+      python: 2.7
+      env: TOXENV=py27
+    - os: linux
+      sudo: required
+      python: 3.6
+      env: TOXENV=py36
+
 install:
   - sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
   - test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
