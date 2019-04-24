@@ -9,6 +9,6 @@ matrix:
       env: MODE=docker
 
 script:
-  - sh doTesting.sh
+  - bash doTesting.sh
 
 
