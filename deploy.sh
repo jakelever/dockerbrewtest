@@ -19,11 +19,11 @@ docker run -it -d --name $image $DOCKER //bin/bash
 echo "travis_fold:start:setupBasicsAndUser"
 docker cp setupBasicsAndUser.sh $image:/
 docker exec -it $image sh setupBasicsAndUser.sh
-echo "travis_fold:stop:setupBasicsAndUser"
+echo "travis_fold:end:setupBasicsAndUser"
 
 echo "travis_fold:start:installLinuxBrew"
 docker cp installLinuxBrew.sh $image:/home/gromit/
 docker exec -it -u gromit $image sh //home/gromit/installLinuxBrew.sh
-echo "travis_fold:stop:installLinuxBrew"
+echo "travis_fold:end:installLinuxBrew"
 
 #docker stop $image
