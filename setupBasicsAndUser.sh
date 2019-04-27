@@ -11,7 +11,7 @@ if type "yum" > /dev/null; then
 elif type "apt-get" > /dev/null; then
 	apt-get update
 	#apt-get install -y build-essential curl git ruby vim tar
-	apt-get install -y build-essential curl file git gawk
+	apt-get install -y build-essential curl file git gawk tar
 else
 	echo "No yum or apt-get to install bare essentials."
 	exit 1
