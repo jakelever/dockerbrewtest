@@ -9,9 +9,9 @@ set -ex
 #fi
 #docker system prune -f
 
-image=`echo $DISTRO"_container" | sed -e 's/[^A-Za-z0-9_]*//g'`
+image=`echo $DOCKER"_container" | sed -e 's/[^A-Za-z0-9_]*//g'`
 
-docker run -it -d --name $image ubuntu:trusty //bin/bash
+docker run -it -d --name $image $DOCKER //bin/bash
 
 docker cp dockerBrew.sh $image:/
 
