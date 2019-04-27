@@ -1,14 +1,17 @@
 
+services:
+  - docker
+
 matrix:
   include:
     - os: linux
       sudo: required
-      env: MODE=bio
+      env: DOCKER=centos:6.6
     - os: linux
       sudo: required
-      env: MODE=docker
+      env: DOCKER=ubuntu:trusty
 
 script:
-  - bash doTesting.sh
+  - bash deploy.sh
 
 
