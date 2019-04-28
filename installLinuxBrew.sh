@@ -1,5 +1,5 @@
 #!/bin/bash
-set -x
+set -ex
 
 cd ~
 
@@ -10,6 +10,8 @@ eval $(~/.linuxbrew/bin/brew shellenv)
 
 platform=$(python -mplatform)
 if [[ $platform == *"centos-6"* ]]; then
+	git clone git://github.com/Homebrew/linuxbrew-core ~/.linuxbrew/Library/Taps/homebrew/homebrew-core --depth 1
+
 	export HOMEBREW_NO_AUTO_UPDATE=1
 	export HOMEBREW_NO_ANALYTICS=1
 	export HOMEBREW_NO_ENV_FILTERING=1
