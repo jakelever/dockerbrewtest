@@ -9,7 +9,7 @@ ln -s ../Homebrew/bin/brew ~/.linuxbrew/bin
 eval $(~/.linuxbrew/bin/brew shellenv)
 
 platform=$(python -mplatform)
-if [[ $platform == *"centos.6"* ]]; then
+if [[ $platform == *"centos-6"* ]]; then
 	HOMEBREW_NO_AUTO_UPDATE=1 HOMEBREW_BUILD_FROM_SOURCE=1 brew install gcc --without-glibc
 	HOMEBREW_NO_AUTO_UPDATE=1 brew install glibc
 # If encountering locale errors in postinstall of glibc, run 
