@@ -9,7 +9,7 @@ if type "yum" > /dev/null; then
 	yum install -y curl file git
 
 	# Extra
-	yum install -y tar
+	yum install -y tar which
 elif type "apt-get" > /dev/null; then
 	apt-get update
 	apt-get install -y build-essential curl file git
