@@ -10,11 +10,15 @@ eval $(~/.linuxbrew/bin/brew shellenv)
 
 platform=$(python -mplatform)
 if [[ $platform == *"centos-6"* ]]; then
-	git clone git://github.com/Homebrew/linuxbrew-core ~/.linuxbrew/Library/Taps/homebrew/homebrew-core --depth 1
+#git clone git://github.com/Homebrew/linuxbrew-core ~/.linuxbrew/Library/Taps/homebrew/homebrew-core --depth 1
 
 	export HOMEBREW_NO_AUTO_UPDATE=1
 	export HOMEBREW_NO_ANALYTICS=1
 	export HOMEBREW_NO_ENV_FILTERING=1
+
+	perl -pi -e 's/"git", "config", "--local",/"git", "config",/' ~/.linuxbrew/Homebrew/Library/Homebrew/tap.rb
+
+	brew install -s gmp mpfr libmpc isl@0.18
 
 	HOMEBREW_NO_AUTO_UPDATE=1 HOMEBREW_BUILD_FROM_SOURCE=1 brew install gcc --without-glibc
 	HOMEBREW_NO_AUTO_UPDATE=1 brew install glibc
