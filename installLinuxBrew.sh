@@ -8,7 +8,6 @@ mkdir ~/.linuxbrew/bin
 ln -s ../Homebrew/bin/brew ~/.linuxbrew/bin
 eval $(~/.linuxbrew/bin/brew shellenv)
 
-platform=$(python -mplatform)
 if grep -q "CentOS release 6" /etc/*-release; then
 #git clone git://github.com/Homebrew/linuxbrew-core ~/.linuxbrew/Library/Taps/homebrew/homebrew-core --depth 1
 
