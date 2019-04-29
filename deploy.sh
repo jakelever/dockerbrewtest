@@ -32,7 +32,7 @@ fold_end setup1
 fold_start brew1 installLinuxBrew
 docker cp ./keepawake $image:/home/gromit/
 docker cp installLinuxBrew.sh $image:/home/gromit/
-docker exec -it -u gromit $image sh //home/gromit/installLinuxBrew.sh
+docker exec -e LANG=C.UTF-8 -e LC_ALL=C.UTF-8 -it -u gromit $image sh //home/gromit/installLinuxBrew.sh
 fold_end brew1
 
 #docker stop $image
