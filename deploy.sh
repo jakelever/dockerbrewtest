@@ -30,6 +30,7 @@ docker exec -it $image sh setupBasicsAndUser.sh
 fold_end setup1
 
 fold_start brew1 installLinuxBrew
+docker cp ./keepawake $image:/home/gromit/
 docker cp installLinuxBrew.sh $image:/home/gromit/
 docker exec -it -u gromit $image sh //home/gromit/installLinuxBrew.sh
 fold_end brew1
