@@ -1,0 +1,19 @@
+#!/bin/bash
+
+command=$@
+
+sh -c "$command" &
+pid=$!
+
+count=0
+while kill -0 $pid > /dev/null 2>&1
+do
+	if [[ $count -eq 60 ]]; then
+		echo "bing bong..."
+		count=0
+	fi
+
+	sleep 1
+	count=$(($count+1))
+done
+
