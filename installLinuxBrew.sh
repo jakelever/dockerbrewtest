@@ -19,7 +19,7 @@ if grep -q "CentOS release 6" /etc/*-release; then
 
 	HOMEBREW_NO_AUTO_UPDATE=1 brew install -s gmp mpfr libmpc isl@0.18
 
-	HOMEBREW_NO_AUTO_UPDATE=1 ./keepawake brew install -s -v gcc --without-glibc
+	HOMEBREW_NO_AUTO_UPDATE=1 ./keepawake brew install -s gcc --without-glibc
 	HOMEBREW_NO_AUTO_UPDATE=1 brew install glibc
 # If encountering locale errors in postinstall of glibc, run 
 # HOMEBREW_NO_AUTO_UPDATE=1 LC_CTYPE=en_GB.UTF-8 brew postinstall glibc
