@@ -16,6 +16,11 @@ elif type "apt-get" > /dev/null; then
 	
 	# Extra
 	apt-get install -y gawk
+	
+	# Code to change locale
+	apt-get install -y locales
+	locale-gen en_US.UTF-8
+	update-locale LANG=en_US.UTF-8
 else
 	echo "No yum or apt-get to install bare essentials."
 	exit 1
