@@ -28,12 +28,14 @@ elif type "apk" > /dev/null; then
 	apk update
 	apk add gcc curl file git
 	apk add tar which gawk
-	apk add bash
+	apk add bash 
+	apk add ruby ruby-json ruby-bigdecimal ruby-irb ruby-dev ruby-bundler ruby-rake
+	apk add gcompat
 	
 	adduser -D -s /bin/bash gromit
 	
-	su - gromit
-	touch ~/.profile
+	touch /home/gromit/.profile
+	chown gromit /home/gromit/.profile
 	
 elif type "pacman" > /dev/null; then
 	pacman -Sy

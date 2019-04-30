@@ -21,7 +21,7 @@ fi
 
 if grep -q "CentOS release 6" /etc/*-release; then
 
-	perl -pi -e 's/"git", "config", "--local",/"git", "config",/' ~/.linuxbrew/Homebrew/Library/Homebrew/tap.rb
+	perl -pi -e 's/"git", "config", "--local",/"git", "config",/' $(brew --prefix)/Homebrew/Library/Homebrew/tap.rb
 
 	HOMEBREW_NO_AUTO_UPDATE=1 brew install -s gmp mpfr libmpc isl@0.18
 
@@ -35,7 +35,10 @@ if grep -q "CentOS release 6" /etc/*-release; then
 	
 	HOMEBREW_NO_AUTO_UPDATE=1 brew install git
 
-	(cd ~/.linuxbrew/Homebrew/Library/Homebrew/ && git checkout HEAD tap.rb)
+	(cd $(brew --prefix)/Homebrew/Library/Homebrew/ && git checkout HEAD tap.rb)
+
+elif grep -q "Alpine Linux" /etc/*-release; then
+	brew install gcc glibc
 fi
 
 brew install hello
