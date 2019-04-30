@@ -1,8 +1,6 @@
 #!/bin/bash
 set -ex
 
-useradd -m -s /bin/bash gromit
-
 if type "yum" > /dev/null; then
 	yum -y update
 	yum groupinstall -y 'Development Tools'
