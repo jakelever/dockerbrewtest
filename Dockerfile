@@ -3,8 +3,6 @@ FROM ubuntu:trusty
 COPY setupBasics.sh /setupBasics.sh
 RUN sh /setupBasics.sh
 
-RUN useradd -m -s /bin/bash gromit
-
 WORKDIR /home/gromit
 USER gromit
 
