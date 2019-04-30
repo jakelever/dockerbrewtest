@@ -28,8 +28,13 @@ elif type "apk" > /dev/null; then
 	apk update
 	apk add gcc curl file git
 	apk add tar which gawk
+	apk add bash
 	
-	adduser -D gromit
+	adduser -D -s /bin/bash gromit
+	
+	su - gromit
+	touch ~/.profile
+	
 elif type "pacman" > /dev/null; then
 	pacman -Sy
 	pacman -S --noconfirm gcc curl file git
