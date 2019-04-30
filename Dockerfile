@@ -8,6 +8,7 @@ RUN useradd -m -s /bin/bash gromit
 WORKDIR /home/gromit
 USER gromit
 
+COPY keepawake /home/gromit/keepawake
 COPY installLinuxBrew.sh /home/gromit/installLinuxBrew.sh
 RUN sh ./installLinuxBrew.sh
 
