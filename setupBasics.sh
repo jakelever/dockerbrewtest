@@ -17,6 +17,7 @@ elif type "apt-get" > /dev/null; then
 	
 	# Code to change locale
 	apt-get install -y locales
+	sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen || true
 	locale-gen en_US.UTF-8
 	update-locale LANG=en_US.UTF-8
 else
