@@ -20,11 +20,6 @@ fi
 
 
 if grep -q "CentOS release 6" /etc/*-release; then
-#git clone git://github.com/Homebrew/linuxbrew-core ~/.linuxbrew/Library/Taps/homebrew/homebrew-core --depth 1
-
-#export HOMEBREW_NO_AUTO_UPDATE=1
-#export HOMEBREW_NO_ANALYTICS=1
-#export HOMEBREW_NO_ENV_FILTERING=1
 
 	perl -pi -e 's/"git", "config", "--local",/"git", "config",/' ~/.linuxbrew/Homebrew/Library/Homebrew/tap.rb
 
@@ -37,6 +32,10 @@ if grep -q "CentOS release 6" /etc/*-release; then
 # see issue - https://github.com/Linuxbrew/legacy-linuxbrew/issues/929
 	HOMEBREW_NO_AUTO_UPDATE=1 brew remove gcc
 	HOMEBREW_NO_AUTO_UPDATE=1 brew install gcc
+	
+	HOMEBREW_NO_AUTO_UPDATE=1 brew install git
+
+	(cd ~/.linuxbrew/Homebrew/Library/Homebrew/ && git checkout HEAD tap.rb)
 fi
 
 brew install hello
